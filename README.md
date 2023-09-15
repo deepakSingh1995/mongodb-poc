@@ -135,10 +135,13 @@ OpportunityModel.findOne({ uuid: '3b241101-e2bb-4255-8caf-4136c566a962' }, (err,
       // ...
    });
       ```
+## Can we use UUID as string ?
+Actually, mongodb does not have any type such as UUID. So, UUID can be only used as a string type in moongodb.
 
 ## Can we use string type instead of ObjectId inside Referenced Database for populate?
-No, there is no way to do that with populate because it does index querying same as findById.
+No, we do that with populate because it does index querying same as findById. 
+Even, Lookup can not does this.
+Only way it can be done if we change the the data type of ObjectId to String or
+We can fetch refrenced data manually like first fetching the data from current modal then again fetching the referenced data from refrenced modal manually using find.
 
-## Can we use UUID as string ?
-Actually, mongodb does not any type such as UUIDs. So, UUID can be only used as string type.
 
